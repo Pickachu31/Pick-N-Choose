@@ -9,7 +9,6 @@ const eventsController = {};
 eventsController.getEvents = async (req, res, next) => {
   await client.eventSearch({
     categories: 2,
-    is_free: true,
     location: req.body.destination
   }).then(response => {
     res.locals = response.jsonBody.events.filter(event => {
