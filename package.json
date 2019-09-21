@@ -17,12 +17,14 @@
   "dependencies": {
     "bcrypt": "^3.0.6",
     "express": "^4.17.1",
+    "google-maps-react": "^2.0.2",
     "prop-types": "^15.6.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-grid-system": "^5.0.2",
     "unirest": "^0.6.0",
-    "yelp-fusion": "^3.0.0"  },
+    "yelp-fusion": "^3.0.0"
+  },
   "devDependencies": {
     "@babel/cli": "^7.6.0",
     "@babel/core": "^7.6.0",

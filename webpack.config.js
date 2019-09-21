@@ -12,7 +12,8 @@ module.exports = {
     contentBase: path.join(__dirname, '/client'),
     proxy: {
       '/': 'http://localhost:3000/',
-      '/airportFetch': 'http://localhost:3000/'
+      '/airportFetch': 'http://localhost:3000/',
+      '/events&activities': 'http://localhost:3000/'
     }
   },
   mode: process.env.NODE_ENV,
@@ -27,7 +28,7 @@ module.exports = {
       },
       { test: /\.s?css?/i,
         exclude: /(node_modules|bower_components)/, 
-        use: ['style-loader', 'css-loader', 'sass-loader', 'ts-loader']
+        use: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
   }
