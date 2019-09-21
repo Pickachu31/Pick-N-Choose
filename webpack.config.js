@@ -27,7 +27,7 @@ module.exports = {
       },
       { test: /\.s?css?/i,
         exclude: /(node_modules|bower_components)/, 
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: ['style-loader', 'css-loader', 'sass-loader', 'ts-loader']
       }
     ]
   }
