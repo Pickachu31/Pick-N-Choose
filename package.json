@@ -1,63 +1,56 @@
 {
-    "name": "picknchoose_vacation_getaway",
-    "version": "1.0.0",
-    "description": "Let's build some cool shit.",
-    "main": "index.js",
-    "scripts": {
-        "start": "NODE_ENV=production nodemon server/server.js",
-        "build": "NODE_ENV=production webpack",
-        "dev": "NODE_ENV=development nodemon server/server.js & webpack-dev-server --open"
-    },
-    "nodemonConfig": {
-        "ignore": [
-            "build",
-            "client"
-        ]
-    },
-    "dependencies": {
-        "@mobiscroll/react": "https://npm.mobiscroll.com/@mobiscroll/react-trial/-/react-trial-4.8.1.tgz",
-        "bcrypt": "^3.0.6",
-        "express": "^4.17.1",
-        "google-maps-react": "^2.0.2",
-        "mobiscroll": "^3.0.0-beta6",
-        "prop-types": "^15.6.1",
-        "react": "^16.9.0",
-        "react-dom": "^16.9.0",
-        "react-grid-system": "^5.0.2",
-        "unirest": "^0.6.0"
-    },
-    "devDependencies": {
-        "@babel/cli": "^7.6.0",
-        "@babel/core": "^7.6.0",
-        "@babel/preset-env": "^7.6.0",
-        "@babel/preset-react": "^7.0.0",
-        "@mobiscroll/cli": "^1.1.1",
-        "babel-loader": "^8.0.6",
-        "concurrently": "^4.1.2",
-        "cookie-parser": "^1.4.4",
-        "cross-env": "^6.0.0",
-        "css-loader": "^3.2.0",
-        "fibers": "^4.0.1",
-        "file-loader": "^4.2.0",
-        "isomorphic-fetch": "^2.2.1",
-        "node-sass": "^4.12.0",
-        "nodemon": "^1.19.2",
-        "sass": "^1.22.12",
-        "sass-loader": "^8.0.0",
-        "style-loader": "^1.0.0",
-        "typescript": "^3.6.3",
-        "webpack": "^4.40.2",
-        "webpack-cli": "^3.3.9",
-        "webpack-dev-server": "^3.8.1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/kendall-lu/scratch-project.git"
-    },
-    "author": "MIT",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/kendall-lu/scratch-project/issues"
-    },
-    "homepage": "https://github.com/kendall-lu/scratch-project#readme"
+  "name": "picknchoose_vacation_getaway",
+  "version": "1.0.0",
+  "description": "Let's build some cool shit.",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=production nodemon server/server.js",
+    "build": "NODE_ENV=production webpack",
+    "dev": "NODE_ENV=development nodemon server/server.js & webpack-dev-server --open"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "build",
+      "client"
+    ]
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "express": "^4.17.1",
+    "prop-types": "^15.6.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-grid-system": "^5.0.2",
+    "unirest": "^0.6.0",
+    "yelp-fusion": "^3.0.0"  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "concurrently": "^4.1.2",
+    "cookie-parser": "^1.4.4",
+    "cross-env": "^6.0.0",
+    "css-loader": "^3.2.0",
+    "file-loader": "^4.2.0",
+    "isomorphic-fetch": "^2.2.1",
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.19.2",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kendall-lu/scratch-project.git"
+  },
+  "author": "MIT",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kendall-lu/scratch-project/issues"
+  },
+  "homepage": "https://github.com/kendall-lu/scratch-project#readme"
 }
