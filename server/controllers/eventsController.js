@@ -4,7 +4,7 @@ const yelp = require('yelp-fusion');
 const keys = require('../../apiKeys.js');
 const client = yelp.client(keys['yelpApiKey']);
 
-function getEvents(location) {
+function getEvents(location, next) {
   client.eventSearch({
     categories: 2,
     is_free: true,
@@ -14,4 +14,6 @@ function getEvents(location) {
   }).catch(e => {
     console.log(e);
   });
+
+  return next();
 }

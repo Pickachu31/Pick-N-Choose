@@ -39,6 +39,6 @@ flightAPI.getAiportTravelDestination = (req, res, next)=>{
         console.log(res.body);
         return next();
     });
-    
+
 }
 module.exports = flightAPI;
