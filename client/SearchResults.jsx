@@ -1,4 +1,5 @@
 import React from 'react';
+import City from './Cities.jsx'
 
 const SearchResults = (props) => {
 

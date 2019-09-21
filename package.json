@@ -20,7 +20,8 @@
     "prop-types": "^15.6.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-grid-system": "^5.0.2"
+    "react-grid-system": "^5.0.2",
+    "unirest": "^0.6.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.0",

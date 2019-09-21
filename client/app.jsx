@@ -11,26 +11,28 @@ class App extends Component {
   }
 
   searchQuery (e) {
+    
     const destination = e.target.Destination.value;
     const departDate = e.target.DepartureDate.value;
     const returnDate = e.target.ReturnDate.value;
     const budget = e.target.DollarAmount.value;
-    fetch('/', {
+    fetch('/airportFetch', {
+      method: 'post',
       headers: {
         'Content-Type': 'application/json'
       },
-      method: 'POST',
-      body: JSON.stringify({username: userName, email: eMail, cohort: coHort})
+      body: JSON.stringify({destination, departDate, returnDate, budget})
     })
     .then(res => res.json())
-    .then(res => this.setState());
+    .then(res => console.log(res))
+    // .then(res => this.setState({destinations: res}));
   }
 
   render() {
     return (
-      <div>
+      <div id='outercontainer'>
         <div id="Header">
-        <img src="Pikachu img"></img>
+        <img src='./Pikachu-PNG-HD.png' id="pikaImg"></img> 
         <h1>Pick_and_Choose Budget Travel</h1>
         </div>
         <MainContainer state={this.state} searchQuery={this.searchQuery}/>
