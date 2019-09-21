@@ -8,7 +8,6 @@ const eventsController = {};
 
 eventsController.getEvents = async (req, res, next) => {
   await client.eventSearch({
-    categories: 2,
     location: req.body.destination
   }).then(response => {
     res.locals = response.jsonBody.events.filter(event => {
@@ -17,6 +16,19 @@ eventsController.getEvents = async (req, res, next) => {
   }).catch(e => {
     console.log(e);
   })
+
+  return next();
+}
+
+eventsController.getActivities = async (req, res, next) => {
+  await client.search({
+    term: 'activities',
+    location: req.body.destination,
+  }).then(response => {
+    res.locals.activities = response.jsonBody.businesses;
+  }).catch(e => {
+    console.log(e);
+  });
 
   return next();
 }

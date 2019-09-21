@@ -64,7 +64,7 @@ app.get('/', (req ,res) => {
 // })
 
 // get events by location
-app.get('/events', eventsAPI.getEvents, (req, res, next) => {
+app.get('/events&activities', eventsAPI.getActivities, (req, res, next) => {
   res.status(200).json(res.locals);
 });
 
