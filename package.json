@@ -2,7 +2,7 @@
   "name": "picknchoose_vacation_getaway",
   "version": "1.0.0",
   "description": "Let's build some cool shit.",
-  "main": "webpack.config.js",
+  "main": "index.js",
   "scripts": {
     "start": "NODE_ENV=production nodemon server/server.js",
     "build": "NODE_ENV=production webpack",
@@ -22,8 +22,7 @@
     "react-dom": "^16.9.0",
     "react-grid-system": "^5.0.2",
     "unirest": "^0.6.0",
-    "yelp-fusion": "^3.0.0"
-  },
+    "yelp-fusion": "^3.0.0"  },
   "devDependencies": {
     "@babel/cli": "^7.6.0",
     "@babel/core": "^7.6.0",
