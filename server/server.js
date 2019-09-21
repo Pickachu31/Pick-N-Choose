@@ -65,8 +65,7 @@ app.get('/flightFetch', flightAPI.getFlightPrices , (req, res)=>{
 
 // get events by location
 app.get('/events', eventsAPI.getEvents, (req, res, next) => {
-  console.log(res.locals);
-  res.sendStatus(200);
+  res.send(200).json(res.locals);
 });
 
 
