@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Cities = (props) => (
+const City = (props) => (
   <div>
     <h3>{props.location}</h3>
     <h2>{props.price}</h2>
@@ -8,4 +8,4 @@ const Cities = (props) => (
 
 );
 
-export default Cities;
+export default City;

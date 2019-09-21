@@ -20,7 +20,7 @@ class App extends Component {
         'Content-Type': 'application/json'
       },
       method: 'POST',
-      body: JSON.stringify({username: userName, email: eMail, cohort: coHort})
+      body: JSON.stringify({})
     })
     .then(res => res.json())
     .then(res => this.setState());
@@ -30,7 +30,7 @@ class App extends Component {
     return (
       <div>
         <div id="Header">
-        <img src="Pikachu img"></img>
+        <img src="./client/Pikachu-PNG-HD.png"></img>
         <h1>Pick_and_Choose Budget Travel</h1>
         </div>
         <MainContainer state={this.state} searchQuery={this.searchQuery}/>
