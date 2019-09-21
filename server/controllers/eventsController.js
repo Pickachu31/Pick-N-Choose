@@ -12,7 +12,9 @@ eventsController.getEvents = async (req, res, next) => {
     is_free: true,
     location: req.body.destination
   }).then(response => {
-    res.locals.events = response.jsonBody.events;
+    res.locals = response.jsonBody.events.filter(event => {
+      return event.time_end === null || new Date(event.time_end) > new Date();
+    });
   }).catch(e => {
     console.log(e);
   })

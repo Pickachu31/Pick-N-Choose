@@ -42,7 +42,7 @@ req.headers({
 
 req.end(function (res) {
     if (res.error) throw new Error(res.error);
-    console.log(res.body);
+    // console.log(res.body);
     // return /next();
 });
 
@@ -54,18 +54,18 @@ app.get('/', (req ,res) => {
 });
 
 //getting all of the airport locations
-app.post('/airportFetch', flightAPI.getAiportTravelDestination, flightAPI.getFlightPrices, (req, res)=>{
-  console.log('fetch is complete')
-  res.status(200).send(res.locals.places)
-})
+// app.post('/airportFetch', flightAPI.getAiportTravelDestination, flightAPI.getFlightPrices, (req, res)=>{
+//   console.log('fetch is complete')
+//   res.status(200).send(res.locals.places)
+// })
 
-app.get('/flightFetch', flightAPI.getFlightPrices , (req, res)=>{
-    console.log(res.body)
-})
+// app.get('/flightFetch', flightAPI.getFlightPrices , (req, res)=>{
+//     console.log(res.body)
+// })
 
 // get events by location
 app.get('/events', eventsAPI.getEvents, (req, res, next) => {
-  res.send(200).json(res.locals);
+  res.status(200).json(res.locals);
 });
 
 

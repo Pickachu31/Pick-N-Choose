@@ -8,7 +8,7 @@
 //     //get request for a certain query: notice the route after /browsequotes/. We specify the country the user is in /US/, the currency /USD/, the locale you want the results in /en-US/, and airport from/SFO-sky/, to /LAX-sky, and outbound partial date /anytime.
 //     var req = unirest("GET", "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/SFO-sky/LAX-sky/anytime");
 //     //headers for the request to skyscanner, the host and unique KEY for access
-//     req.headers({
+//     req.headers({});
 //
 // function fetchPrices (place){
 //   const unirestRequest = unirest("GET", `https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/LAX-sky/${place.PlaceId}/anytime`);
