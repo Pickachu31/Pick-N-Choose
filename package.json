@@ -2,7 +2,7 @@
   "name": "picknchoose_vacation_getaway",
   "version": "1.0.0",
   "description": "Let's build some cool shit.",
-  "main": "webpack.config.js",
+  "main": "index.js",
   "scripts": {
     "start": "NODE_ENV=production nodemon server/server.js",
     "build": "NODE_ENV=production webpack",

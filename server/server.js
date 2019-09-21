@@ -9,6 +9,7 @@ const PORT = 3000;
 const flightAPI = require('./flightControllers/flightControllers.js');
 
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.use('/assets', express.static(path.join(__dirname, '/../client/assets')))
 
@@ -50,9 +51,11 @@ req.end(function (res) {
 app.get('/', (req ,res) => {
   res.status(200).sendFile(path.join(__dirname + '/../index.html'));
 });
-//getting all of the airport locations
-app.post('/aiportFetch', flightAPI.getAiportTravelDestination, (req, res)=>{
-    console.log(res.body)
+
+//getting all of the airport locations 
+app.post('/airportFetch', flightAPI.getAiportTravelDestination, flightAPI.getFlightPrices, (req, res)=>{
+  console.log('fetch is complete')
+  res.status(200).send(res.locals.places)
 })
 
 app.get('/flightFetch', flightAPI.getFlightPrices , (req, res)=>{
@@ -66,12 +69,13 @@ app.all('*', (req, res) => {
 });
 
 app.use((err, req, res, next) => {
+  console.log(err);
   const defaultErr = {
     log: 'Express error handler caught unknown middleware error',
     status: 400,
     message: { err: 'An error occurred' },
   }
-  const errObj = Object.assign((defaultErr, err));
+  const errObj = Object.assign((err, defaultErr));
   console.log(errObj.log);
 
   res.sendStatus(errObj.status).json(errorObj.message);

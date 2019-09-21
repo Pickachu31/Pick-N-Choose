@@ -1,4 +1,4 @@
 node_modules/
 package-lock.json
 apiKeys.js
-client/build
+client/build/bundle.js
