@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import MainContainer from './MainContainer.jsx';
+
+import MainContainer from './containers/MainContainer.jsx';
+import './styles.css';
 
 class App extends Component {
   constructor(props) {
@@ -11,11 +13,12 @@ class App extends Component {
   }
 
   searchQuery (e) {
-    
+
     const destination = e.target.Destination.value;
     const departDate = e.target.DepartureDate.value;
     const returnDate = e.target.ReturnDate.value;
     const budget = e.target.DollarAmount.value;
+
     fetch('/airportFetch', {
       method: 'post',
       headers: {

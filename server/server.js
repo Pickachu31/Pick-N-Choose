@@ -1,3 +1,4 @@
+
 const path = require('path');
 const express = require('express');
 const app = express();
@@ -50,6 +51,7 @@ req.end(function (res) {
 app.get('/', (req ,res) => {
   res.status(200).sendFile(path.join(__dirname + '/../index.html'));
 });
+
 //getting all of the airport locations 
 app.post('/airportFetch', flightAPI.getAiportTravelDestination, flightAPI.getFlightPrices, (req, res)=>{
   console.log('fetch is complete')
