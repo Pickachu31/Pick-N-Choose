@@ -2,10 +2,11 @@ const path = require('path');
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const keys = require('../apiKeys.js');
 
 const PORT = 3000;
 //controller for flight API
-const flightAPI = require('./flightControllers/flightControllers.js');
+const flightAPI = require('./controllers/flightControllers.js');
 
 
 app.use(bodyParser.json())
