@@ -6,6 +6,15 @@ module.exports = {
     path: path.resolve(__dirname, 'client/build'),
     filename: 'bundle.js'
   }, 
+  devServer: {
+    port:8080,
+    publicPath: '/build',
+    contentBase: path.join(__dirname, '/client'),
+    proxy: {
+      '/': 'http://localhost:3000/',
+      '/airportFetch': 'http://localhost:3000/'
+    }
+  },
   mode: process.env.NODE_ENV,
   module: {
     rules: [
@@ -21,12 +30,5 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
-  },
-  devServer: {
-    publicPath: '/build',
-    contentBase: path.join(__dirname, '/client'),
-    proxy: {
-      '/': 'http://localhost:3000/'
-    }
   }
 };
