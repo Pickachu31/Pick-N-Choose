@@ -2,7 +2,9 @@ import React from 'react';
 
 const SearchResults = (props) => {
 
-  let results = [];
+  let results = props.state.destinations.map((city, ind) => (
+    <City key={ind} location={city.CityName} price={city.MinPrice}/>)
+  );
 
   return (
     <div>
