@@ -2,11 +2,11 @@ const path = require('path');
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const keys = require('../apiKeys.js');
 
 const PORT = 3000;
 //controller for flight API
 const flightAPI = require('./controllers/flightControllers.js');
+const eventsAPI = require('./controllers/eventsController.js');
 
 
 app.use(bodyParser.json())
@@ -24,6 +24,11 @@ app.get('/aiportFetch', flightAPI.getAiportTravelDestination, (req, res)=>{
 app.get('/flightFetch', flightAPI.getFlightPrices , (req, res)=>{
     console.log(res.body)
 })
+
+// getting events by location
+// app.get('/events', eventsAPI.getEvents, (req, res, next) => {
+//   console.log(res.body);
+// });
 
 
 
