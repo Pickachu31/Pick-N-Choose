@@ -4,16 +4,20 @@ const yelp = require('yelp-fusion');
 const keys = require('../../apiKeys.js');
 const client = yelp.client(keys['yelpApiKey']);
 
-function getEvents(location, next) {
-  client.eventSearch({
+const eventsController = {};
+
+eventsController.getEvents = async (req, res, next) => {
+  await client.eventSearch({
     categories: 2,
     is_free: true,
-    location: 'claremont, ca'
+    location: req.body.destination
   }).then(response => {
-    console.log(response.jsonBody.events[0].name);
+    res.locals.events = response.jsonBody.events;
   }).catch(e => {
     console.log(e);
-  });
+  })
 
   return next();
 }
+
+module.exports = eventsController;

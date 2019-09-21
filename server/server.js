@@ -53,7 +53,7 @@ app.get('/', (req ,res) => {
   res.status(200).sendFile(path.join(__dirname + '/../index.html'));
 });
 
-//getting all of the airport locations 
+//getting all of the airport locations
 app.post('/airportFetch', flightAPI.getAiportTravelDestination, flightAPI.getFlightPrices, (req, res)=>{
   console.log('fetch is complete')
   res.status(200).send(res.locals.places)
@@ -63,10 +63,11 @@ app.get('/flightFetch', flightAPI.getFlightPrices , (req, res)=>{
     console.log(res.body)
 })
 
-// getting events by location
-// app.get('/events', eventsAPI.getEvents, (req, res, next) => {
-//   console.log(res.body);
-// });
+// get events by location
+app.get('/events', eventsAPI.getEvents, (req, res, next) => {
+  console.log(res.locals);
+  res.sendStatus(200);
+});
 
 
 
