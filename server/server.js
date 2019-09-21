@@ -41,7 +41,7 @@ req.headers({
 
 req.end(function (res) {
     if (res.error) throw new Error(res.error);
-    console.log(res.body);
+    // console.log(res.body);
     // return /next();
 });
 
@@ -52,15 +52,15 @@ app.get('/', (req ,res) => {
   res.status(200).sendFile(path.join(__dirname + '/../index.html'));
 });
 
-//getting all of the airport locations 
-app.post('/airportFetch', flightAPI.getAiportTravelDestination, flightAPI.getFlightPrices, (req, res)=>{
-  console.log('fetch is complete')
-  res.status(200).send(res.locals.places)
-})
+// //getting all of the airport locations 
+// app.post('/airportFetch', flightAPI.getAiportTravelDestination, flightAPI.getFlightPrices, (req, res)=>{
+//   console.log('fetch is complete')
+//   res.status(200).send(res.locals.places)
+// })
 
-app.get('/flightFetch', flightAPI.getFlightPrices , (req, res)=>{
-    console.log(res.body)
-})
+// app.get('/flightFetch', flightAPI.getFlightPrices , (req, res)=>{
+//     console.log(res.body)
+// })
 
 
 
@@ -69,14 +69,14 @@ app.all('*', (req, res) => {
 });
 
 app.use((err, req, res, next) => {
-  console.log(err);
+  // console.log(err);
   const defaultErr = {
     log: 'Express error handler caught unknown middleware error',
     status: 400,
     message: { err: 'An error occurred' },
   }
   const errObj = Object.assign((err, defaultErr));
-  console.log(errObj.log);
+  // console.log(errObj.log);
 
   res.sendStatus(errObj.status).json(errorObj.message);
 });

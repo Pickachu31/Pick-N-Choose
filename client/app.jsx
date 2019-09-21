@@ -7,11 +7,18 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      destinations: [{}],
+      destinations: [{placeId: 'Las Vegas', min: 50}, {placeId:'Montana', min: 75}],
       todos: [],
     };
   }
+  
+  componentDidMount () {
 
+  }
+
+  componentDidUpdate () {
+
+  }
   searchQuery (e) {
 
     const destination = e.target.Destination.value;
@@ -32,11 +39,13 @@ class App extends Component {
   }
 
   render() {
+
+    console.log('in app component', this.state)
     return (
       <div id='outercontainer'>
         <div id="Header">
-        <img src="./client/Pikachu-PNG-HD.png"></img>
-        <h1>Pick_and_Choose Budget Travel</h1>
+        <span><img id="pikaImg" src="./client/Pikachu-PNG-HD.png"></img></span>
+        <h1>Pickn'Choose Budget Travel</h1>
         </div>
         <MainContainer state={this.state} searchQuery={this.searchQuery}/>
       </div>
