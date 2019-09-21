@@ -1,0 +1,34 @@
+body {
+  background-color: white;
+  height: 2000px;
+}
+
+#MapArea {
+  width:80%;
+  height: 300px;
+}
+
+#Header {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  height: 60px;
+  background-color: aqua
+}
+
+#SearchBar {
+  width: 80%;
+  margin: 0 auto;
+  background-color: blue;
+}
+
+#SearchResults {
+  width: 80%;
+  margin: 0 auto;
+  background-color: yellow;
+}
+
+#SearchAreaTitle {
+  width: 40%;
+  margin: 0 auto;
+}
