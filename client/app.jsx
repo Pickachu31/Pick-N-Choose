@@ -5,7 +5,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      destinations: [],
+      destinations: [{}],
       todos: [],
     };
   }
@@ -32,7 +32,7 @@ class App extends Component {
     return (
       <div id='outercontainer'>
         <div id="Header">
-        <img src='./Pikachu-PNG-HD.png' id="pikaImg"></img> 
+        <img src="./client/Pikachu-PNG-HD.png"></img>
         <h1>Pick_and_Choose Budget Travel</h1>
         </div>
         <MainContainer state={this.state} searchQuery={this.searchQuery}/>

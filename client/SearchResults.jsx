@@ -13,7 +13,9 @@ const SearchResults = (props) => {
         <h4>Search Results</h4>
       </div>
       <div id="SearchResults">
+        <div>
         {results}
+        </div>
       </div>
     </div>
   )
