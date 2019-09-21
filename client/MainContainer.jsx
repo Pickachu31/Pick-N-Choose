@@ -1,6 +1,6 @@
 import React from 'react';
-import Map from '/Map';
-import SearchArea from '/SearchArea`';
+import Map from './Map.jsx';
+import SearchArea from './SearchArea.jsx';
 
 const MainContainer = (props) => {
 

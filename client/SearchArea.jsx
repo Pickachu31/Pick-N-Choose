@@ -1,6 +1,6 @@
 import React from 'react';
-import SearchBar from '/SearchBar.jsx'
-import SearchResults from '/SearchResults.jsx'
+import SearchBar from './SearchBar.jsx'
+import SearchResults from './SearchResults.jsx'
 
 const SearchArea = (props) => {
 

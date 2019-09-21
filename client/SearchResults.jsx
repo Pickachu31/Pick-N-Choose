@@ -1,4 +1,5 @@
 import React from 'react';
+import City from './Cities.jsx'
 
 const SearchResults = (props) => {
 
@@ -12,7 +13,9 @@ const SearchResults = (props) => {
         <h4>Search Results</h4>
       </div>
       <div id="SearchResults">
+        <div>
         {results}
+        </div>
       </div>
     </div>
   )
