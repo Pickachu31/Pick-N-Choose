@@ -6,12 +6,15 @@ const MainContainer = (props) => {
   return (
     <div>
       {/* Map component will render the google map's API*/}
-      <Map state= {props.state} center={props.center}/>
-      <SearchArea 
+      <Map state={props.state}
+           destination={props.destination}
+           center={props.center}
+           activities={props.activities}/>
+      <SearchArea
         setCoordinates={props.setCoordinates}
-        activities={props.activities} 
-        findActivities={props.findActivities} 
-        state={props.state} 
+        activities={props.activities}
+        findActivities={props.findActivities}
+        state={props.state}
         searchQuery={props.searchQuery}/>
     </div>
   )

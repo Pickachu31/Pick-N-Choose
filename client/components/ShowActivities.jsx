@@ -26,9 +26,9 @@ const ShowActivities = ({activities, setCoordinates})=>{
         </div>
       );
     })
+
     return (
       <div>
-      <button style={{width:'auto',height:'20px'}} onClick = {()=>{setCoordinates(coordinates)}}> show on google maps </button>
         {displayActivities}
       </div>
     )

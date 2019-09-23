@@ -1,10 +1,13 @@
 import GoogleMapReact from 'google-map-react';
 import React, {useState} from 'react';
+import Marker from './Marker.jsx';
 
-const Map = ({center, state})=> {
+const Map = ({center, state, destination, activities})=> {
+
   const [isCenter, setIsCenter] = useState({lat: 36.778259, lng: -119.417931});
   const [isZoomed, setIsZoomed] = useState(6);
   const [isNewCoordinates, setIsNewCoordinates] = useState(false);
+  
   if (isCenter.lat !== center.lat){
     setIsCenter(center);
   }
@@ -18,8 +21,8 @@ const Map = ({center, state})=> {
     // setIsZoomed(8)
     setIsNewCoordinates(true);
   }
-  const displayMarkers = state.coordinates.map((obj,index) =>{
-    return <Marker lat={obj.latitude} lng={obj.longitude}/>
+  const displayMarkers = activities.map((activity, index) =>{
+    return <Marker activity={activity} lat={activity.coordinates.latitude} lng={activity.coordinates.longitude}/>
   })
   return <div style={mapStyle}>
       <GoogleMapReact
@@ -30,14 +33,8 @@ const Map = ({center, state})=> {
       {displayMarkers}
       </GoogleMapReact>
     </div>
+}
 
-}
-const Marker = props => {
-  return <div>
-    <div className="pin"></div>
-    <div className="pulse"></div>
-  </div>
-}
 const mapStyle = {
   height: '250px',
   width: '80%',

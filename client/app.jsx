@@ -12,18 +12,18 @@ class App extends Component {
       activities: [],
       coordinates: [],
       //this center property within the state is centered on california
-      center: {lat: 36.778259, lng: -119.417931},
+      center: {lat: 36.778259, lng: -119.417931}
     };
     this.searchQuery = this.searchQuery.bind(this);
     this.findActivities = this.findActivities.bind(this);
     this.setCoordinates = this.setCoordinates.bind(this);
   }
-  
+
   searchQuery(destination, departureDate, returnDate, dollarAmount){
     geocodeByAddress(destination)
     .then(results => getLatLng(results[0]))
     .then(({lat,lng}) =>{
-      this.setState({ center: {lat, lng}})
+      this.setState({ center: {lat, lng}});
     }
     );
 
@@ -66,7 +66,7 @@ class App extends Component {
       this.setState({activities: result.activities})
     })
   }
-  
+
   setCoordinates(arrayOfCoordinates){
     this.setState({coordinates: arrayOfCoordinates});
   }
@@ -78,12 +78,13 @@ class App extends Component {
         {/*<span><img id="pikaImg" src="./client/Pikachu-PNG-HD.png"></img></span>*/}
         <h1>Pickn'Choose Budget Travel</h1>
         </div>
-        <MainContainer 
-          center = {this.state.center} 
+        <MainContainer
+          destination={this.state.destination}
+          center = {this.state.center}
           state={this.state}
-          searchQuery={this.searchQuery} 
-          findActivities={this.findActivities} 
-          activities={this.state.activities} 
+          searchQuery={this.searchQuery}
+          findActivities={this.findActivities}
+          activities={this.state.activities}
           setCoordinates={this.setCoordinates}/>
       </div>
     )

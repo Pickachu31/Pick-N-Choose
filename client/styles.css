@@ -217,6 +217,14 @@ input {
 
 /* MARKER */
 
+.marker {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  background: white;
+  z-index: 1;
+  border-radius: 5px;
+}
 
 .pin {
   width: 30px;
