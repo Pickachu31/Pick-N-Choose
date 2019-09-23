@@ -2,9 +2,10 @@ import GoogleMapReact from 'google-map-react';
 import React, {useState} from 'react';
 
 const Marker = props => {
-  console.log('props', props)
+
   const [boxVisible, setBoxVisible ] = useState(false);
 
+// toggle activity box visible
   const toggleBox = () => {
     if (boxVisible) {
       setBoxVisible(false);
@@ -13,6 +14,7 @@ const Marker = props => {
     }
   }
 
+// if box is visible, render the following content
   const content = () => {
     if (boxVisible) {
       return (
@@ -28,6 +30,7 @@ const Marker = props => {
   }
 
   return <div className='marker' onClick={toggleBox} >
+  // toggle classname to display activity box on map
     <div className={boxVisible ? 'activityBox' : null} onClick={toggleBox}>{content()}</div>
     <div className="pin"></div>
     <div className="pulse"></div>
