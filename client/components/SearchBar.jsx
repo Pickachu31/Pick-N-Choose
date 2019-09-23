@@ -17,8 +17,11 @@ const SearchBar = (props) => {
           // document.getElementById('DollarAmount').value = ''
         }} id="form" method="post">
         <input id="Destination" type="text" placeholder="Destination" name="Destination" required={true}></input>
+        <label>Depart:</label>
         <input id="DepartureDate" type="date" name="DepartureDate" required={true}></input>
+        <label>Return:</label>
         <input id="ReturnDate" type="date" name="ReturnDate" required={true}></input>
+        <label>Budget?:</label>
         <input id="DollarAmount" type="integer" name="DollarAmount"></input>
         <button type="submit" value="submit form">Let's Travel!</button>
       </form>
