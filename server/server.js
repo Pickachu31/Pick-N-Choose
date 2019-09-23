@@ -5,26 +5,30 @@ const app = express();
 const bodyParser = require('body-parser');
 
 const PORT = 3000;
-//controller for flight API
+//controller for flight API (skyskanner)
 const flightAPI = require('./controllers/flightControllers.js');
+//controller for events API (yelp)
 const eventsAPI = require('./controllers/eventsController.js');
+
+// var ip = req.header('x-forwarded-for') || req.connection.remoteAddress;
+// app.set('trust proxy', true);
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use('/assets', express.static(path.join(__dirname, '/../client/assets')))
 
+
 app.get('/', (req ,res) => {
   res.status(200).sendFile(path.join(__dirname + '/../index.html'));
 });
 
 app.post('/airportFetch', flightAPI.getAiportTravelDestination, flightAPI.getMinimumFlightPrices, (req, res)=>{
-  res.status(200).json({prices: res.locals.places});
+  res.json({prices: res.locals.mappedData});
 });
 
-
-app.get('/events&activities', eventsAPI.getActivities, (req, res, next) => {
-  res.status(200).json(res.locals);
+app.post('/events&activities', eventsAPI.getActivities, (req, res) => {
+  res.json({activities: res.locals.businesses});
 });
 
 
