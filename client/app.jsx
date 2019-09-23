@@ -24,6 +24,7 @@ class App extends Component {
     this.isLoggedIn = this.isLoggedIn.bind(this);
     this.changeClientViewToBusinesses = this.changeClientViewToBusinesses.bind(this);
   }
+
   //when the user passes in these arguments and clicks 'Let's Travel' than it will trigger this function
   searchQuery(destination, departureDate, returnDate, dollarAmount){
     //this will grab the destination's latitude and longitude via the npm module 'react-places-autocomplete'
@@ -34,6 +35,7 @@ class App extends Component {
       this.setState({ center: {lat, lng}})
     });
     //fetching airport data
+
     fetch('/airportFetch', {
       method: 'post',
       headers: {
@@ -74,6 +76,7 @@ class App extends Component {
     })
   }
   //setting the coordinates so that the markers can appear
+
   setCoordinates(arrayOfCoordinates){
     this.setState({coordinates: arrayOfCoordinates});
   }
@@ -113,18 +116,19 @@ class App extends Component {
       <span><img id="pikaImg" src="./assets/Pikachu-PNG-HD.png"></img></span>
       <h1>Pickn'Choose</h1><h6>Budget Travel</h6>
       <Login isLoggedIn={this.isLoggedIn} loginValidation={this.loginValidation}></Login>
-      </div> : 
+      </div> :
       <div id='outercontainer'>
         <div id="Header">
         <span><img id="pikaImg" src="./assets/Pikachu-PNG-HD.png"></img></span>
         <h1>Pickn'Choose</h1><h6>Budget Travel</h6>
         </div>
-        <MainContainer 
-          center = {this.state.center} 
+        <MainContainer
+          destination={this.state.destination}
+          center = {this.state.center}
           state={this.state}
-          searchQuery={this.searchQuery} 
-          findActivities={this.findActivities} 
-          activities={this.state.activities} 
+          searchQuery={this.searchQuery}
+          findActivities={this.findActivities}
+          activities={this.state.activities}
           setCoordinates={this.setCoordinates}
           changeClientViewToBusinesses={this.changeClientViewToBusinesses}
           />

@@ -28,12 +28,14 @@ const ShowActivities = ({activities, setCoordinates, changeClientViewToBusinesse
       </div>
       );
     })
+
     return (
       <center><div id="activities">
       <button style={{width:'auto',height:'20px'}} onClick = {()=>{
         changeClientViewToBusinesses(coordinates[0])
         setCoordinates(coordinates)
       }}> Show ALL on GoogleMaps </button>
+
         {displayActivities}
       </div></center>
     )
