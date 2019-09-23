@@ -6,15 +6,17 @@ const Login = ({isLoggedIn, loginValidation})=>{
       !isSignedUp ?
       <div>
       <form>
-      Username:<input id='username' type='text' placeholder='username goes here'/>
-      Password:<input id='password' type='password' placeholder='password goes here'/>
+        <label>Username:</label>
+        <input id='username' type='text' placeholder='user'/>
+        <label>Password: </label>
+        <input id='password' type='password' placeholder='password'/>
         <button onClick={(e)=>{
             e.preventDefault();
           let username = document.getElementById('username').value;
           let password = document.getElementById('password').value;
           loginValidation(username, password)
         }}>Log in</button>
-        <button onClick={()=>{setIsSignedUp(true)}}> OR Sign up</button>
+        <button onClick={()=>{setIsSignedUp(true)}}>Sign Up</button>
       </form>
       </div> : <Signup isLoggedIn={isLoggedIn}isSignedUp={isSignedUp} setIsSignedUp={setIsSignedUp}></Signup>
     )
@@ -39,10 +41,10 @@ const Login = ({isLoggedIn, loginValidation})=>{
     }
     
   return (
-    <div>
+    <div id="loginPage">
       <form>
-      <input id='usernameSignup' type='text' placeholder='username goes here'/>
-      <input id='passwordSignup' type='password' placeholder='password goes here'/>
+      <input id='usernameSignup' type='text' placeholder='username'/>
+      <input id='passwordSignup' type='password' placeholder='password'/>
         <button onClick={(e)=>{
             e.preventDefault();
           let username = document.getElementById('usernameSignup').value;
