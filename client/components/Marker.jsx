@@ -29,8 +29,8 @@ const Marker = props => {
     }
   }
 
-  return <div className='marker' onClick={toggleBox} >
   // toggle classname to display activity box on map
+  return <div className='marker' onClick={toggleBox} >
     <div className={boxVisible ? 'activityBox' : null} onClick={toggleBox}>{content()}</div>
     <div className="pin"></div>
     <div className="pulse"></div>
