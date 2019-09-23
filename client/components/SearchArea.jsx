@@ -6,7 +6,11 @@ const SearchArea = (props) => {
   return (
     <div>
       <SearchBar state={props.state} searchQuery={props.searchQuery} />
-      <SearchResults state={props.state}/>
+      <SearchResults 
+        setCoordinates={props.setCoordinates}
+        activities={props.activities} 
+        state={props.state} 
+        findActivities={props.findActivities}/>
     </div>
   )
 }
