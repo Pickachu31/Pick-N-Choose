@@ -11,10 +11,10 @@ const SearchResults = (props) => {
   return (
     <div>
       <div id="SearchAreaTitle">
-        <h4>Search Results</h4>
+        <h3>Search Results</h3>
       </div>
       <div id="SearchResults">
-        <div>
+        <div className="queryresults">
         {results}
         </div>
       </div>

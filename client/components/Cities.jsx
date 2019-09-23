@@ -4,9 +4,10 @@ const City = (props) => {
   return (
     <div id="city">
       <h3>{props.location}</h3>
-      <p>
+      {/* <div> */}
       <h2>{props.price}</h2>
-     </p>
+      {/* <p></p> */}
+      {/* </div> */}
     </div>
   );
 }

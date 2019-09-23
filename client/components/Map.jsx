@@ -5,10 +5,9 @@ export class MapContainer extends React.Component {
   render() {
     return (
       <div className="map">
-        <Map style={mapStyle} google={this.props.google} zoom={8}>
+        <Map style={mapStyle} google={this.props.google} zoom={8}/>
         <Marker onClick={this.onMarkerClick}
             name={'California'} />
-        </Map>
       </div>
     );
   }

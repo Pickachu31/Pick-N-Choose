@@ -44,7 +44,7 @@ class App extends Component {
     return (
       <div id='outercontainer'>
         <div id="Header">
-        <span><img id="pikaImg" src="./client/Pikachu-PNG-HD.png"></img></span>
+        <img id="pikaImg" src="./client/Pikachu-PNG-HD.png"></img>
         <h1>Pickn'Choose Budget Travel</h1>
         </div>
         <MainContainer state={this.state} searchQuery={this.searchQuery}/>
