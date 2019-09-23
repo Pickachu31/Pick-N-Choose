@@ -298,6 +298,23 @@ button {
 
 /* MARKER */
 
+.activityBox {
+  position: relative;
+  left: 35px;
+  top: -200px;
+  width: 275px;
+  height: 200px;
+  background: white;
+  z-index: 1;
+  border-radius: 5px;
+  overflow: scroll;
+  text-align: center
+}
+
+.marker img {
+  height: 170px;
+  width: 170px;
+}
 
 .pin {
   width: 30px;
