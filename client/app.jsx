@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 //this is for google map's API to grab the longitude/latitude of an input string(useful in searchQuery method)
 import { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
 import MainContainer from './containers/MainContainer.jsx';
+import Login from './components/Login.jsx';
 import './styles.css';
 
 class App extends Component {
@@ -12,11 +13,14 @@ class App extends Component {
       activities: [],
       coordinates: [],
       //this center property within the state is centered on california
-      center: {lat: 36.778259, lng: -119.417931}
+      center: {lat: 36.778259, lng: -119.417931},
+      isLoggedIn: false,
     };
     this.searchQuery = this.searchQuery.bind(this);
     this.findActivities = this.findActivities.bind(this);
     this.setCoordinates = this.setCoordinates.bind(this);
+    this.loginValidation = this.loginValidation.bind(this);
+    this.isLoggedIn = this.isLoggedIn.bind(this);
   }
 
   searchQuery(destination, departureDate, returnDate, dollarAmount){
@@ -70,13 +74,42 @@ class App extends Component {
   setCoordinates(arrayOfCoordinates){
     this.setState({coordinates: arrayOfCoordinates});
   }
-
+  loginValidation(username, password){
+    fetch('/loginValidation', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({username, password})
+    })
+    .then(res =>{
+      return res.json();
+    })
+    .then(result =>{
+      if (result.authenticated){
+        this.setState({isLoggedIn:true});
+      }
+    })
+    .catch(err =>{
+      return new Error(err);
+    })
+  }
+  isLoggedIn(boolean){
+    if (boolean){
+      this.setState({isLoggedIn:true});
+    }
+  }
   render() {
     return (
+      !this.state.isLoggedIn ? <div>
+      <span><img id="pikaImg" src="./assets/Pikachu-PNG-HD.png"></img></span>
+      <h1>Pickn'Choose</h1><h6>Budget Travel</h6>
+      <Login isLoggedIn={this.isLoggedIn} loginValidation={this.loginValidation}></Login>
+      </div> :
       <div id='outercontainer'>
         <div id="Header">
-        {/*<span><img id="pikaImg" src="./client/Pikachu-PNG-HD.png"></img></span>*/}
-        <h1>Pickn'Choose Budget Travel</h1>
+        <span><img id="pikaImg" src="./assets/Pikachu-PNG-HD.png"></img></span>
+        <h1>Pickn'Choose</h1><h6>Budget Travel</h6>
         </div>
         <MainContainer
           destination={this.state.destination}
@@ -85,7 +118,8 @@ class App extends Component {
           searchQuery={this.searchQuery}
           findActivities={this.findActivities}
           activities={this.state.activities}
-          setCoordinates={this.setCoordinates}/>
+          setCoordinates={this.setCoordinates}
+          />
       </div>
     )
   }

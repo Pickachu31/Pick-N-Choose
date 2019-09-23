@@ -8,8 +8,7 @@ const City = (props) => {
 
   //using conditional rendering to check if the isCurrentLocation is either T:F (depending on the state, it will render a respective component)
   return (
-    !isCurrentLocation?
-      (<div id="city">
+      <div id="city">
         <button style={{width:'auto',height:'20px'}} onClick={ ()=>{
           // this button onclick will fire off the findActivities method in our app.jsx (parent) component, it will route to the server.js file,
           //where the yelp API will fetch the first 15 activities;
@@ -18,17 +17,10 @@ const City = (props) => {
           setIsCurrentLocation(props.location);
         }}>
         Find some activities! </button>
-          <h3>{props.location}</h3>
-          <h2>{props.price}</h2>
+          <center><h3>**{props.location}**</h3></center>
+          <center><h2>${props.price}</h2></center>
           <h6>Disclaimer: Prices do not include fees and Taxes</h6>
-      </div>) : (
-          <ShowActivities 
-            setCoordinates={props.setCoordinates}
-            location={props.location} 
-            activities={props.activities}
-            isClickedForActivities={isClickedForActivities}
-            state={props.state}
-          />)
+      </div>
   );
 }
 export default City;

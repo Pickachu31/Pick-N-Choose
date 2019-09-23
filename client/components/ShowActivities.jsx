@@ -1,6 +1,8 @@
 import React from 'react';
+
 //child component called in the conditional rendering of above
 const ShowActivities = ({activities, setCoordinates})=>{
+
     //filtering businesses that are closed, we don't want to direct clients to places that are closed...
     const openBusinesses = activities.filter(el=>{
       return !el.is_closed
@@ -15,22 +17,22 @@ const ShowActivities = ({activities, setCoordinates})=>{
       coordinates.push(el.coordinates)
     })
     //creates a component for each of the businesses that came in the request of the yelp API
-    const displayActivities = openBusinesses.map(el =>{
+    const displayActivities = openBusinesses.map((el, ind) =>{
       return (
-        <div id='displayActivitiesComponent'>
+      <div id="displayActivitiesComponent" key={ind} >
           <img src={`${el.image_url}`} style={{height:'75px', width:'75px'}}></img>
-          <h3>Activities Business Name: {el.name}</h3>
-          <h5>Rating out of <b>5</b> {el.rating} w/ {el.review_count} Number of reviews</h5>
+          <center><h3>{el.name}</h3></center>
+          <h5>Rated {el.rating} out of <strong>5</strong> w/ {el.review_count} reviews</h5>
           <h5>Phone: {el.display_phone}</h5>
           <a href={`${el.url}`}>Contact Website: {el.name}</a>
-        </div>
+      </div>
       );
     })
 
     return (
-      <div>
+      <center><div id="activities">
         {displayActivities}
-      </div>
+      </div></center>
     )
 }
 
