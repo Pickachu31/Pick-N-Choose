@@ -24,12 +24,14 @@ eventsController.getActivities = async (req, res, next) => {
   await client.search({
     term: 'activities',
     location: req.body.destination,
+    limit:15,
   }).then(response => {
-    res.locals.activities = response.jsonBody.businesses;
+    // console.log(response.jsonBody.businesses)
+    res.locals.businesses = response.jsonBody.businesses;
+    // console.log('response.jsonBody.businesses.activities', response.jsonBody.businesses)
   }).catch(e => {
-    console.log(e);
+    console.log('Error in event Controller file for middleware .getActivities', e);
   });
-
   return next();
 }
 

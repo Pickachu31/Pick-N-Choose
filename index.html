@@ -3,24 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow&display=swap" rel="stylesheet">  
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" type="text/css" href="./client/styles.css"/>
   <title>Pick_and_Choose Budget Travel</title>
+  <style> 
+  body{
+    font-family: 'PT Sans Narrow', sans-serif !important;  
+  }
+  </style>
 </head>
 <body>
-  <div id="root">root page</div>
+  <div id="root"></div>
   <script src="build/bundle.js"></script>
-  <script>
-    var map;
-    function initMap() {
-      map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: -34.397, lng: 150.644},
-        zoom: 10
-      });
-    }
   </script>
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=places">
-    </script>
+  
 </body>
 </html>
