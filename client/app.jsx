@@ -112,15 +112,27 @@ class App extends Component {
   }
   render() {
     return (
-      !this.state.isLoggedIn ? <div>
-      <span><img id="pikaImg" src="./assets/Pikachu-PNG-HD.png"></img></span>
-      <h1>Pickn'Choose</h1><h6>Budget Travel</h6>
+      !this.state.isLoggedIn ? <div id="page">
+        <div id="login">
+          <div id="loginImageAndTitle">
+            <img id="pikaImg" src="./assets/Pikachu-PNG-HD.png"></img>
+            <div id="loginMainTitle">
+            <h1>Pickn'Choose</h1><h5>Budget Travel</h5>
+            </div>
+          </div>
+        </div>
       <Login isLoggedIn={this.isLoggedIn} loginValidation={this.loginValidation}></Login>
       </div> :
       <div id='outercontainer'>
         <div id="Header">
-        <span><img id="pikaImg" src="./assets/Pikachu-PNG-HD.png"></img></span>
-        <h1>Pickn'Choose</h1><h6>Budget Travel</h6>
+          <div id="imageAndTitle">
+            <img id="pikaImg" src="./assets/Pikachu-PNG-HD.png"></img>
+            <div id="mainTitle">
+            <h1>Pickn'Choose</h1>
+            <h5>Budget Travel</h5>
+            </div>
+            <img id="pikaImg" src="./assets/Pikachu-PNG-HD.png"></img>
+          </div>
         </div>
         <MainContainer
           destination={this.state.destination}
