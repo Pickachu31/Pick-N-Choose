@@ -1,12 +1,24 @@
 import GoogleMapReact from 'google-map-react';
 import React, {useState} from 'react';
 
+<<<<<<< HEAD
+export class MapContainer extends React.Component {
+  render() {
+    return (
+      <div className="map">
+        <Map style={mapStyle} google={this.props.google} zoom={8}/>
+        <Marker onClick={this.onMarkerClick}
+            name={'California'} />
+      </div>
+    );
+=======
 const Map = ({center, state})=> {
   const [isCenter, setIsCenter] = useState({lat: 36.778259, lng: -119.417931});
   const [isZoomed, setIsZoomed] = useState(6);
   const [isNewCoordinates, setIsNewCoordinates] = useState(false);
   if (isCenter.lat !== center.lat){
     setIsCenter(center);
+>>>>>>> master
   }
   const setCenterObj ={};
   state.coordinates.forEach(el =>{

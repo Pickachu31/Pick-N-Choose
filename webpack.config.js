@@ -26,7 +26,7 @@ module.exports = {
           presets: ['@babel/preset-env', '@babel/preset-react']
         }
       },
-      { test: /\.s?css?/i,
+      { test: /\.s?css/i,
         exclude: /(node_modules|bower_components)/, 
         use: ['style-loader', 'css-loader', 'sass-loader']
       }

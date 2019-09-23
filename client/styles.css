@@ -3,7 +3,7 @@ body {
   display:flex;
   background-color: white;
   width: 100%;
-  height: 1500px;
+  height: auto;
   margin: 0px;
   padding: 0px;
 }
@@ -20,11 +20,18 @@ button {
 }
 #Header {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   vertical-align: center;
+<<<<<<< HEAD
+  height: 30px;
+  background-color: #FFFD96;
+=======
   height: 40px;
   /* background-color: aqua; */
+>>>>>>> master
   padding: 15px;
+  box-shadow: 0px 2px 0px 0px rgba(200, 156, 255, 0.4);
+  border-radius: 0  0 10px 10px;
 }
 
 #Header h1 {
@@ -39,8 +46,8 @@ button {
 }
 
 #pikaImg {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
 }
 
 #MapArea {
@@ -56,31 +63,61 @@ button {
 }
 
 #SearchBar {
-  justify-content: space-around;
+  justify-content: space-between;
   vertical-align: center;
   width: 80%;
   height: 40px;
   margin: 0 auto;
+<<<<<<< HEAD
+  background-color: #FFFEB0;
+=======
   /* background-color: blue; */
+>>>>>>> master
   border-radius: 15px;
-  box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 2px 2px  rgba(200, 156, 255, 0.4);
+  border:#C89CFF;
 }
 #SearchFields {
-  vertical-align: center;
-  justify-content: space-between;
+  /* vertical-align: center;
+  justify-content: space-between; */
   border-radius: 10px;
 }
 
 #SearchResults {
+<<<<<<< HEAD
+  overflow: auto;
+  padding: 1em;
+  display: grid;
+=======
   /* display: flex; */
   grid-template-columns: repeat(3, 1fr);
+>>>>>>> master
   width: 80%;
   height: auto;
   flex-direction: row;
   margin: 0 auto;
+<<<<<<< HEAD
+  background-color: #FFFD96;
+  border-radius: 15px;
+=======
   /* background-color: yellow; */
   /* border-radius: 15px; */
+>>>>>>> master
   box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+#city {
+  padding: 0.5em;
+  margin: 0.5em;
+  font-size: .8em;
+  border: 1px solid #e4e4e4;
+  box-shadow: 1px 1px 2px 2px  rgba(200, 156, 255, 0.4);
+  background-color: #7F9EB3;
+}
+
+.queryresults {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 #SearchResults div {
@@ -101,10 +138,17 @@ button {
   color: black;
   padding: 0.5em;
   margin: 0.5em;
+<<<<<<< HEAD
+  /* font-size: .8em; */
+  border: 1px solid #FFFEB0;
+  box-shadow: 1px 1px 2px 2px  rgba(200, 156, 255, 0.4);
+  background-color: #B3B157;
+=======
   font-size: .8em;
   border: 1px solid #e4e4e4;
   box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
   /* background-color: #7F9EB3; */
+>>>>>>> master
   border-radius: 8px;
 }
 
@@ -115,9 +159,15 @@ button {
   padding: 0.5em;
   margin: 0.5em;
   font-size: .8em;
+<<<<<<< HEAD
+  border: 1px solid #FFFEB0;
+  box-shadow: 1px 1px 2px 2px r rgba(200, 156, 255, 0.4);
+  background-color: #C89CFF;
+=======
   border: 1px solid #e4e4e4;
   box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
   /* background-color: #7F9EB3; */
+>>>>>>> master
   border-radius: 8px;
 }
 
@@ -128,9 +178,9 @@ button {
   padding: 0.5em;
   margin: 0.5em;
   font-size: .8em;
-  border: 1px solid #e4e4e4;
-  box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
-  background-color: #7F9EB3;
+  border: 1px solid #FFFEB0;
+  box-shadow: 1px 1px 2px 2px  rgba(200, 156, 255, 0.4);
+  background-color: #C89CFF;
   border-radius: 8px;
 }
 
@@ -141,16 +191,16 @@ input {
   padding: 4em;
 }
 
-button {
-  min-width: 4em;
-  padding: 0.4em 1em;
-  margin: 3px;
-  border: 1px solid #ccc;
-  border-radius: 2px;
-  width: 90px;
-  height: 25px;
-  vertical-align: center;
-}
+/* button { */
+  /* min-width: 4em; */
+  /* padding: 0.4em 1em; */
+  /* margin: 3px; */
+  /* border: 1px solid #FFFEB0; */
+  /* border-radius: 2px; */
+  /* width: 90px; */
+  /* height: 25px; */
+  /* vertical-align: center; */
+/* } */
 
 #form {
   display: flex;
@@ -158,12 +208,16 @@ button {
   vertical-align: center;
 }
 #form input {
-  min-width: 131px;
+  min-width: 80px;
   width: 165px;
 }
  #form button {
-   width: 90px;
-   height: 25px;
+   min-width:50px;
+   width: 120px;
+   height:22px;
+   border: 1px solid #B3B157;
+   border-radius: 3px;
+   margin: 10px;
  }
 
 .map {
