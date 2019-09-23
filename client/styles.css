@@ -40,11 +40,6 @@ button {
   margin: 0 auto;
 }
 
-#pikaImg {
-  width: 40px;
-  height: 40px;
-}
-
 #MapArea {
   width:80%;
   height: 300px;
@@ -215,6 +210,73 @@ button {
   padding: 0 0 80px;
   border-radius: 10px;
 }
+
+#root {
+  height: 1000px;
+  background-color: #FFFD96;
+}
+
+#page form {
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+
+#login {
+  display: flex;
+  justify-content: center;
+}
+
+#loginImageAndTitle {
+  position: relative;
+  height: 150px;
+  margin: 20px auto;
+  padding: 20px;
+  width: 150px;
+  top: 50px;
+}
+#loginImageAndTitle img {
+  position: relative;
+  left: 45px;
+}
+
+#loginMainTitle h5{
+  position: relative;
+  width: 70px;
+  top: -20px;
+  left: 40px;
+}
+
+#pikaImg {
+  width: 50px;
+  height: 50px;
+  margin: -12px auto;
+}
+
+#mainTitle {
+  position: relative;
+  top: -10px;
+  left: 5px;
+  justify-content: center;
+  vertical-align: center;
+  margin: 0px auto;
+  width: 150px;
+  height: 60px;
+
+}
+
+#mainTitle h5 {
+  position: relative;
+  top: -30px;
+  left: 45px;
+}
+
+#imageAndTitle {
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+}
 /* Optional: Makes the sample page fill the window. */
 
 
@@ -233,9 +295,6 @@ button {
 .marker:hover {
     z-index: 1;
 }
-
-
-
 
 /* MARKER */
 
