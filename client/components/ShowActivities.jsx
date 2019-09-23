@@ -1,7 +1,7 @@
 import React from 'react';
 
 //child component called in the conditional rendering of above
-const ShowActivities = ({activities, setCoordinates})=>{
+const ShowActivities = ({activities, setCoordinates, changeClientViewToBusinesses})=>{
 
     //filtering businesses that are closed, we don't want to direct clients to places that are closed...
     const openBusinesses = activities.filter(el=>{
@@ -30,7 +30,10 @@ const ShowActivities = ({activities, setCoordinates})=>{
     })
     return (
       <center><div id="activities">
-      <button style={{width:'auto',height:'20px'}} onClick = {()=>{setCoordinates(coordinates)}}> Show ALL on GoogleMaps </button>
+      <button style={{width:'auto',height:'20px'}} onClick = {()=>{
+        changeClientViewToBusinesses(coordinates[0])
+        setCoordinates(coordinates)
+      }}> Show ALL on GoogleMaps </button>
         {displayActivities}
       </div></center>
     )

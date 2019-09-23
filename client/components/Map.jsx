@@ -1,38 +1,35 @@
+//google map npm module that allows us to render a google map
 import GoogleMapReact from 'google-map-react';
 import React, {useState} from 'react';
-
+const keys = require('../../apiKeys');
+// map component that renders the client view of the map, it will change the view via 'center' and how close the client's view is via 'zoom'
 const Map = ({center, state})=> {
+  //default latitude and longitude (set to california)
   const [isCenter, setIsCenter] = useState({lat: 36.778259, lng: -119.417931});
+  //setting zoom to further away
   const [isZoomed, setIsZoomed] = useState(6);
-  const [isNewCoordinates, setIsNewCoordinates] = useState(false);
+  //checking if the center has been changed, if so, go ahead and move the center view as well as zoom in
   if (isCenter.lat !== center.lat){
     setIsCenter(center);
+    setIsZoomed(12)
   }
-  const setCenterObj ={};
-  state.coordinates.forEach(el =>{
-    setCenterObj.lat = el.latitude;
-    setCenterObj.lng = el.longitude;
-  })
-  if (state.coordinates.length !== 0 && !isNewCoordinates){
-    setIsCenter(setCenterObj);
-    // setIsZoomed(8)
-    setIsNewCoordinates(true);
-  }
+  //mapping markers so that the business markers will display
   const displayMarkers = state.coordinates.map((obj,index) =>{
-    return <Marker lat={obj.latitude} lng={obj.longitude}/>
+    return <Marker center={{lat:obj.latitude, lng:obj.longitude}} lat={obj.latitude} lng={obj.longitude}/>
   })
+  // native component to google-map-react, using the key that I generated, please generate your own key and use that instead
   return <div style={mapStyle}>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: 'AIzaSyCkWXqlnmxZr60qyhXg6BUkT_N33xyL8E0' }}
+        bootstrapURLKeys={{ key: keys.googleAPIkey }}
         center={isCenter}
-        defaultZoom={isZoomed}
+        zoom={isZoomed}
       >
       {displayMarkers}
       </GoogleMapReact>
     </div>
     
 }
-const Marker = props => {
+const Marker = () => {
   return <div>
     <div className="pin"></div>
     <div className="pulse"></div>
