@@ -8,15 +8,6 @@ const City = (props) => {
 
   //using conditional rendering to check if the isCurrentLocation is either T:F (depending on the state, it will render a respective component)
   return (
-<<<<<<< HEAD
-    <div id="city">
-      <h3>{props.location}</h3>
-      {/* <div> */}
-      <h2>{props.price}</h2>
-      {/* <p></p> */}
-      {/* </div> */}
-    </div>
-=======
     !isCurrentLocation?
       (<div id="city">
         <button style={{width:'auto',height:'20px'}} onClick={ ()=>{
@@ -38,7 +29,6 @@ const City = (props) => {
             isClickedForActivities={isClickedForActivities}
             state={props.state}
           />)
->>>>>>> master
   );
 }
 export default City;
