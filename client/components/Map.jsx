@@ -17,11 +17,9 @@ const Map = ({center, state, destination, activities})=> {
   
   if (isCenter.lat !== center.lat){
     setIsCenter(center);
-    setIsZoomed(12)
+    setIsZoomed(10)
   }
   //mapping markers so that the business markers will display
-  const displayMarkers = state.coordinates.map((obj,index) =>{
-    return <Marker center={{lat:obj.latitude, lng:obj.longitude}} lat={obj.latitude} lng={obj.longitude}/>
   const setCenterObj ={};
   state.coordinates.forEach(el =>{
     setCenterObj.lat = el.latitude;
@@ -33,7 +31,7 @@ const Map = ({center, state, destination, activities})=> {
     setIsNewCoordinates(true);
   }
   const displayMarkers = activities.map((activity, index) =>{
-    return <Marker activity={activity} lat={activity.coordinates.latitude} lng={activity.coordinates.longitude}/>
+    return <Marker center={{lat:activity.latitude, lng:activity.longitude}} activity={activity} lat={activity.coordinates.latitude} lng={activity.coordinates.longitude}/>
   })
   // native component to google-map-react, using the key that I generated, please generate your own key and use that instead
   return <div style={mapStyle}>
@@ -45,9 +43,6 @@ const Map = ({center, state, destination, activities})=> {
       {displayMarkers}
       </GoogleMapReact>
     </div>
-
-    
-  }
 }
 
 const mapStyle = {
