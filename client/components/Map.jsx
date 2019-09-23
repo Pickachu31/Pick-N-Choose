@@ -1,13 +1,14 @@
 import GoogleMapReact from 'google-map-react';
 import React, {useState} from 'react';
 import Marker from './Marker.jsx';
+import apiKeys from '../../apiKeys.js'
 
 const Map = ({center, state, destination, activities})=> {
 
   const [isCenter, setIsCenter] = useState({lat: 36.778259, lng: -119.417931});
   const [isZoomed, setIsZoomed] = useState(6);
   const [isNewCoordinates, setIsNewCoordinates] = useState(false);
-  
+
   if (isCenter.lat !== center.lat){
     setIsCenter(center);
   }
@@ -24,9 +25,10 @@ const Map = ({center, state, destination, activities})=> {
   const displayMarkers = activities.map((activity, index) =>{
     return <Marker activity={activity} lat={activity.coordinates.latitude} lng={activity.coordinates.longitude}/>
   })
+
   return <div style={mapStyle}>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: 'AIzaSyCkWXqlnmxZr60qyhXg6BUkT_N33xyL8E0' }}
+        bootstrapURLKeys={{ key: apiKeys['googleApiKey'] }}
         center={isCenter}
         defaultZoom={isZoomed}
       >
