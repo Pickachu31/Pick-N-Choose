@@ -15,10 +15,12 @@
     ]
   },
   "dependencies": {
-    "bcrypt": "^3.0.6",
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
     "google-map-react": "^1.1.5",
     "google-maps-react": "^2.0.2",
+    "pg": "^7.12.1",
+    "postgresql": "0.0.1",
     "prop-types": "^15.6.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
@@ -50,14 +52,6 @@
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.8.1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kendall-lu/scratch-project.git"
-  },
   "author": "MIT",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/kendall-lu/scratch-project/issues"
-  },
-  "homepage": "https://github.com/kendall-lu/scratch-project#readme"
+  "license": "MIT"
 }
