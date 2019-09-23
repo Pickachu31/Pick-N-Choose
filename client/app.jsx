@@ -22,12 +22,12 @@ class App extends Component {
     this.loginValidation = this.loginValidation.bind(this);
     this.isLoggedIn = this.isLoggedIn.bind(this);
   }
-  
+
   searchQuery(destination, departureDate, returnDate, dollarAmount){
     geocodeByAddress(destination)
     .then(results => getLatLng(results[0]))
     .then(({lat,lng}) =>{
-      this.setState({ center: {lat, lng}})
+      this.setState({ center: {lat, lng}});
     }
     );
 
@@ -70,7 +70,7 @@ class App extends Component {
       this.setState({activities: result.activities})
     })
   }
-  
+
   setCoordinates(arrayOfCoordinates){
     this.setState({coordinates: arrayOfCoordinates});
   }
@@ -105,18 +105,19 @@ class App extends Component {
       <span><img id="pikaImg" src="./assets/Pikachu-PNG-HD.png"></img></span>
       <h1>Pickn'Choose</h1><h6>Budget Travel</h6>
       <Login isLoggedIn={this.isLoggedIn} loginValidation={this.loginValidation}></Login>
-      </div> : 
+      </div> :
       <div id='outercontainer'>
         <div id="Header">
         <span><img id="pikaImg" src="./assets/Pikachu-PNG-HD.png"></img></span>
         <h1>Pickn'Choose</h1><h6>Budget Travel</h6>
         </div>
-        <MainContainer 
-          center = {this.state.center} 
+        <MainContainer
+          destination={this.state.destination}
+          center = {this.state.center}
           state={this.state}
-          searchQuery={this.searchQuery} 
-          findActivities={this.findActivities} 
-          activities={this.state.activities} 
+          searchQuery={this.searchQuery}
+          findActivities={this.findActivities}
+          activities={this.state.activities}
           setCoordinates={this.setCoordinates}
           />
       </div>
