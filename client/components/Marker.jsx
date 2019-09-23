@@ -2,7 +2,7 @@ import GoogleMapReact from 'google-map-react';
 import React, {useState} from 'react';
 
 const Marker = props => {
-  // console.log('props', props)
+  console.log('props', props)
   const [boxVisible, setBoxVisible ] = useState(false);
 
   const toggleBox = () => {
@@ -13,21 +13,22 @@ const Marker = props => {
     }
   }
 
-  const boxStyle = {
-    display: 'none', /* Hidden by default */
-    position: 'fixed', /* Stay in place */
-    'z-index': '1', /* Sit on top */
-    left: '0',
-    top: '0',
-    width: '100%', /* Full width */
-    height: '100%', /* Full height */
-    overflow: 'auto', /* Enable scroll if needed */
-    'background-color': 'rgb(0,0,0)', /* Fallback color */
-    'background-color': 'rgba(0,0,0,0.4)' /* Black w/ opacity */
-    
+  const content = () => {
+    if (boxVisible) {
+      return (
+        <div>
+          <img src={`${props.activity.image_url}`}></img>
+          <a href={props.activity.url}><h2>{props.activity.name}</h2></a>
+          <p>Rating out of 5: {props.activity.rating}</p>
+          <p>Number of reviews: {props.activity.review_count}</p>
+          <p>Phone: {props.activity.display_phone}</p>
+        </div>
+      )
+    }
   }
 
-  return <div className={boxVisible ? 'marker' : null} onClick={toggleBox} >
+  return <div className='marker' onClick={toggleBox} >
+    <div className={boxVisible ? 'activityBox' : null} onClick={toggleBox}>{content()}</div>
     <div className="pin"></div>
     <div className="pulse"></div>
   </div>
