@@ -14,7 +14,9 @@ const Map = ({center, state, destination, activities})=> {
 
   if (isCenter.lat !== center.lat){
     setIsCenter(center);
-    setIsZoomed(8)
+
+    setIsZoomed(10)
+
   }
   //mapping markers so that the business markers will display
   const setCenterObj ={};
