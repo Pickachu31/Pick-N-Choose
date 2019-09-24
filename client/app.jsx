@@ -9,7 +9,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      destinations: [{placeId: 'Los Angeles', min: '2900000'}, {placeId: 'Las vegas', min: '3201'}],
+      destinations: [{placeId: 'Los Angeles', min: '290'}, {placeId: 'Las vegas', min: '3201'}],
       activities: [],
       coordinates: [],
       //this center property within the state is centered on california

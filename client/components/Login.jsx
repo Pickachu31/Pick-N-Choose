@@ -4,17 +4,19 @@ const Login = ({isLoggedIn, loginValidation})=>{
     const [isSignedUp, setIsSignedUp] = useState(false);
     return (
       !isSignedUp ?
-      <div>
+      <div id="loginDiv">
       <form>
         <label>Username:</label>
-        <input id='username' type='text' placeholder='user'/>
+        <input id='username' type='text' placeholder='user' required={true}/>
         <label>Password: </label>
-        <input id='password' type='password' placeholder='password'/>
+        <input id='password' type='password' placeholder='password' required={true}/>
         <button onClick={(e)=>{
             e.preventDefault();
           let username = document.getElementById('username').value;
           let password = document.getElementById('password').value;
           loginValidation(username, password)
+          document.getElementById('username').value = '';
+          document.getElementById('password').value = '';
         }}>Log in</button>
         <button onClick={()=>{setIsSignedUp(true)}}>Sign Up</button>
       </form>
