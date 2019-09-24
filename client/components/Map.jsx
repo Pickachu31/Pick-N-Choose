@@ -5,19 +5,16 @@ const keys = require('../../apiKeys');
 // map component that renders the client view of the map, it will change the view via 'center' and how close the client's view is via 'zoom'
   //default latitude and longitude (set to california)
 import Marker from './Marker.jsx';
-
 const Map = ({center, state, destination, activities})=> {
-
   const [isCenter, setIsCenter] = useState({lat: 36.778259, lng: -119.417931});
   //setting zoom to further away
   const [isZoomed, setIsZoomed] = useState(6);
-
   //checking if the center has been changed, if so, go ahead and move the center view as well as zoom in
   const [isNewCoordinates, setIsNewCoordinates] = useState(false);
-  
+
   if (isCenter.lat !== center.lat){
     setIsCenter(center);
-    setIsZoomed(10)
+    setIsZoomed(8)
   }
   //mapping markers so that the business markers will display
   const setCenterObj ={};
@@ -44,7 +41,6 @@ const Map = ({center, state, destination, activities})=> {
       </GoogleMapReact>
     </div>
 }
-
 const mapStyle = {
   height: '250px',
   width: '80%',
