@@ -11,10 +11,12 @@ const Map = ({center, state, destination, activities})=> {
   const [isZoomed, setIsZoomed] = useState(6);
   //checking if the center has been changed, if so, go ahead and move the center view as well as zoom in
   const [isNewCoordinates, setIsNewCoordinates] = useState(false);
-  
+
   if (isCenter.lat !== center.lat){
     setIsCenter(center);
+
     setIsZoomed(10)
+
   }
   //mapping markers so that the business markers will display
   const setCenterObj ={};

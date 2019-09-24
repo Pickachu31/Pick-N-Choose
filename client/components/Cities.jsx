@@ -1,9 +1,7 @@
 import React, {useState} from 'react';
-import ShowActivities from './ShowActivities.jsx'
 //used react hooks, sorry for the inconsistency(from react -> react hooks), but here is a link: https://reactjs.org/docs/hooks-intro.html
 // thankfully the documentation for react hooks are very helpful.
 const City = (props) => {
-  const [isClickedForActivities, setIsClickedForActivities] = useState(false);
   const [isCurrentLocation, setIsCurrentLocation] = useState('');
 
   //using conditional rendering to check if the isCurrentLocation is either T:F (depending on the state, it will render a respective component)

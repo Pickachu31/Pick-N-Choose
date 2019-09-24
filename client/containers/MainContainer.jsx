@@ -11,13 +11,16 @@ const MainContainer = (props) => {
       <Map state={props.state}
            destination={props.destination}
            center={props.center}
-           activities={props.activities}/>
+           activities={props.activities}
+           />
       <SearchArea
-        setCoordinates={props.setCoordinates}
+        setCoordinates= {props.setCoordinates}
         activities={props.activities}
         findActivities={props.findActivities}
         state={props.state}
-        searchQuery={props.searchQuery}/>
+        searchQuery={props.searchQuery}
+        changeClientViewToBusinesses={props.changeClientViewToBusinesses}
+        />
     </div>
   )
 };
