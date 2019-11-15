@@ -1,4 +1,3 @@
-
 const path = require('path');
 const express = require('express');
 const app = express();
@@ -32,7 +31,7 @@ app.post('/events&activities', eventsAPI.getActivities, (req, res) => {
   res.json({activities: res.locals.businesses});
 });
 
-//login validation 
+//login validation
 app.post('/loginValidation', postgresDB.authenticate, (req, res)=>{
   res.json({authenticated: res.locals.authenticated})
 })
